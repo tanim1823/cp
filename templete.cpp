@@ -25,7 +25,7 @@ typedef double dl;
 #define sz(x) (int)x.size()
 #define YES; cout << "YES\n";
 #define NO; cout << "NO\n";
-#define yes; cout << "no\n";
+#define yes; cout << "yes\n";
 #define no; cout << "no\n";
 
 
