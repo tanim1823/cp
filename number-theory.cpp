@@ -44,8 +44,28 @@ void primeGen(int n){
 
 /// End Of Prime Generation
 
+/// Prime Factorization
+/// Complexity: ( (√n) / ln(√n) ) + log2(n)
+vector<int> primeFactors(int n){
+    vector<int> factors;
+    for(auto p : primes){
+        if(1LL * p * p > n) break;
+        if(n % p == 0){
+            while(n % p == 0){
+                factors.push_back(p);
+                n /= p;
+            }
+        }
+    }
+    if(n > 1) factors.push_back(n);
+    return factors;
+}
 
+  int n = 1100;
+    vector<int> factors = primeFactors(n);
+    dbg(factors);
 
+/// End Prime Factorization
 
 
 
