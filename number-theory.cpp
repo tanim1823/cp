@@ -1,4 +1,5 @@
 /* Harmony series */
+/// Complexity O( n x ln(n) )
     const int mx = 1e7+123;
     int cnt[mx];
     int lim = 10;
@@ -11,7 +12,8 @@
 
 
 /// Seive Of Eratosthense
-/// Prime number
+/// Prime number 
+/// Complexity O(n)
 const int mx = 1e8+123;
 // bool isPrime[mx];
 bitset<mx> isPrime;
