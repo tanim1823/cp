@@ -68,8 +68,46 @@ vector<int> primeFactors(int n){
 /// End Prime Factorization
 
 
+/// Prime Factorization
+/// Complexity: ( (√n) / ln(√n) ) + log2(n)
+vector<int> primeFactors(int n){
+    vector<int> factors;
+    for(auto p : primes){
+        if(1LL * p * p > n) break;
+        if(n % p == 0){
+            while(n % p == 0){
+                factors.push_back(p);
+                n /= p;
+            }
+        }
+    }
+    if(n > 1) factors.push_back(n);
+    return factors;
+}
 
+/// Number of DIvisor
+/// Complexity: ( (√n) / ln(√n) ) + log2(n)
+int NOD(int n){
+    int nod = 1;
+    for(auto p : primes){
+        if(1LL * p * p > n) break;
+        if(n % p == 0){
+            int cnt = 0;
+            while(n % p == 0){
+                n /= p;
+                cnt++;
+            }
+            cnt++;
+            nod *= cnt;
+        }
+    }
+    if(n > 1) nod *= 2;
+    return nod;
+}
 
+ cout << NOD(12) << endl;
+
+/// End Number of DIvisor
 
 
 
