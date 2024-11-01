@@ -109,6 +109,21 @@ int NOD(int n){
 
 /// End Number of DIvisor
 
+/// Summation Of Number Of Divisor
+/// Complexity:  (√n)
+int SNOD(int n){
+    int snod = 0;
+    int sq = sqrt(n);
+    for(int i = 1; i<=sq;i++){
+    int val = (n / i) - i;
+    snod += val;
+   }
+    snod *= 2;
+    snod += sq;
+    return snod;
+}
+/// End Summation Of Number Of Divisor
+
 
 
 
