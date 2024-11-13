@@ -124,6 +124,35 @@ int SNOD(int n){
 }
 /// End Summation Of Number Of Divisor
 
+///  Sum of Divisor of an Integer number
+/// Complexity: ( (√n) / ln(√n) ) + log2(n)
+long long SOD(int n){
+    long long sod = 1;
+
+    for(auto p : primes){
+        if(1LL * p * p > n) break;
+        if(n % p == 0){
+            ll sum = 1;
+            ll  a = 1;
+            while(n % p == 0){
+               a *= p;
+               sum += a;
+                n /= p;
+            }
+            sod *= sum;
+        }
+
+    }
+    if(n > 1) sod *= (n+1);
+    return sod;
+}
+
+/// END  Sum of Divisor of an Integer number
+
+
+
+
+
 
 
 
